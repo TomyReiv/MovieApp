@@ -1,0 +1,14 @@
+<div class="saved-content">
+    <h1>Movies saved to watch</h1>
+    <ul>
+      <li *ngFor="let item of savedMovie, let i = index">
+        <img
+          [src]="image + item.image"
+          alt="{{ item.Title }}"
+          class="saved-content-image"
+        />
+        <span>{{ item.Title }}</span>
+        <button class="delete" (click)="removeSavedItem(i, 'savedMovies')">Delete</button>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,28 @@
+<main class="container__main" *ngFor="let item of movie">
+  <h1>{{ item.Title }}</h1>
+  <div class="container__card">
+    <img [src]="image + item.image" alt="item.Title" />
+    <div class="container__description">
+      <p>{{ item.Description }}</p>
+      <a [href]="item.TrailerLink"target="_blank" rel="noopener noreferrer"> {{item.TrailerLink}} </a>
+      <div class="container__span">
+        <span> {{ item.ReleasedDate }} </span>
+        <span *ngFor="let genre of item.Genre" class="span__genre"
+          >{{ genre }} |</span
+        >
+        <span>
+          <i
+            class="pi pi-star-fill"
+            style="color: rgb(218, 188, 23);"
+          >
+            {{ item.Rating }}
+          </i>
+        </span>
+      </div>
+      <div class="container__button">
+        <button *ngIf="!save" (click)="addToFavorite(item)">Add to favorite</button>
+        <button class="disabled" *ngIf="save" disabled  (click)="addToFavorite(item)">On my list</button>
+      </div>
+    </div>
+  </div>
+</main>

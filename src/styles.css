@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-dark-teal/theme.css";
+@import "primeicons/primeicons.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --color-primario: #3498db;
+  --malachite-50: #effef0;
+  --malachite-100: #dafedc;
+  --citron-100: #fcfbcb;
+  --malachite-200: #b6fcbb;
+  --malachite-300: #7ef788;
+  --malachite-400: #3fe94d;
+  --malachite-500: #16d426;
+  --malachite-600: #0bae19;
+  --malachite-700: #0d8818;
+  --malachite-800: #106b19;
+  --malachite-900: #0f5817;
+  --malachite-950: #023108;
+  --nav: #071426;
+
+  --title: 3rem;
+  --subtitle: 2rem;
+  --small-text: 1rem;
+  --medium-text: 1.5rem;
+}

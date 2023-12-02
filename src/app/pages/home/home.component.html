@@ -1,0 +1,79 @@
+<main class="container__main">
+  <!-- <button (click)="redirectMyList()" class="button__list"> <i class="pi pi-bookmark" style="font-size: 1rem;"></i> My list</button> -->
+
+  <div class="container__search">
+    <input
+      type="text"
+      [value]="searchQuery"
+      (input)="onSearchInputChange($event)"
+      placeholder="Buscar series..."
+    />
+
+    <div class="filter" *ngIf="filteredMovie">
+      <h4 *ngFor="let item of filteredMovie" (click)="redirectMovie(item.id!)">
+        <img
+          [src]="image + item.image"
+          style="height: 3rem; width: 3rem"
+          alt=""
+        />
+        {{ item.Title }} | {{ item.ReleasedDate }}
+      </h4>
+    </div>
+  </div>
+
+  <div class="container__orderBy">
+    <label for="">Order by:</label>
+    <select
+      class="select__orderBy"
+      [(ngModel)]="orderBy"
+      name="orderBy"
+      id="orderBy"
+    >
+      <option value="Title A-Z">Title A-Z</option>
+      <option value="Title Z-A">Title Z-A</option>
+      <option value="ReleasedDate">Release Date</option>
+    </select>
+  </div>
+
+  <div class="container__card">
+    <div
+      class="card flex justify-content-center"
+      *ngFor="let item of movies | sortBy : orderBy!"
+      [style]="{ width: '360px' }"
+    >
+      <p-card class="card__body">
+        <h3>{{ item.Title }}</h3>
+        <img
+          alt="item.Title"
+          (click)="redirectMovie(item.id!)"
+          [src]="image + item.image"
+        />
+        <h4>
+          {{ item.ReleasedDate }}
+          <i
+            class="pi pi-star-fill"
+            style="color: rgb(218, 188, 23); margin-left: 1rem"
+          >
+            {{ item.Rating }}
+          </i>
+        </h4>
+        <div class="container__button">
+          <button
+            *ngIf="isSave(item.id) === false"
+            (click)="addToFavorite(item)"
+          >
+            Add to favorite
+          </button>
+          <button
+            class="disabled"
+            *ngIf="isSave(item.id) === true"
+            disabled
+            (click)="addToFavorite(item)"
+          >
+            On my list
+          </button>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</main>
