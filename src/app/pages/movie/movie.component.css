@@ -7,6 +7,7 @@
     text-align: center;
     margin: 2rem;
     margin-top: 2rem;
+    border-bottom: none;
 }
 .container__card{
     display: grid;
@@ -19,7 +20,6 @@
     width: 80%;
     height: 90%;
     object-fit: contain;
-    mix-blend-mode: color-burn;
 }
 
 .container__description p{
@@ -70,6 +70,9 @@
     }
     img{
         margin: auto;
+    }
+    .container__main h1{
+        font-size: var(--subtitle);
     }
 }
 

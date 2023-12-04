@@ -41,10 +41,6 @@ export class HomeComponent implements OnInit{
     this.router.navigate(['/pages/Movie/', id]);
   }
 
-  changeSortType(value: string) {
-    this.orderBy = value
-  }
-
   addToFavorite(Movie: any){
     const savedMovies = JSON.parse(localStorage.getItem('savedMovies') || '[]');
     savedMovies.push(Movie);

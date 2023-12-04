@@ -1,9 +1,19 @@
-<nav class="container__nav">
-  <li (click)="redirectHome()">
-    <i class="pi pi-home" style="font-size: 1rem; margin-right: 0.3rem;"></i>Home
-  </li>
-  <li (click)="redirectMyList()">
-    <i class="pi pi-bookmark" style="font-size: 1rem"></i>
-    My list
-  </li>
-</nav>
+
+<div class="card">
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <img
+      (click)="redirectHome()"
+        src="../../../assets/logo-removebg-preview.png"
+        height="50"
+        class="mr-2"
+      />
+    </ng-template>
+    <ng-template pTemplate="end">
+      <label class="switch">
+        <input (click)="toggleDarkMode()" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </ng-template>
+  </p-menubar>
+</div>

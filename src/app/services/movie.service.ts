@@ -40,6 +40,16 @@ export class MovieService {
     );
   }
 
+  private isDarkMode = false;
+
+  getIsDarkMode(): boolean {
+    return this.isDarkMode;
+  }
+
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-mode', this.isDarkMode);
+  }
 }
 
 

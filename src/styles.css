@@ -32,3 +32,13 @@ body {
   --small-text: 1rem;
   --medium-text: 1.5rem;
 }
+
+body.dark-mode {
+  background-color: #fdf8f8;
+  color: var(--nav);
+}
+
+body.dark-mode h1{
+  color: var(--nav);
+  border-bottom: 1px solid var(--nav);
+}

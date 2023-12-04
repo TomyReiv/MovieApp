@@ -30,4 +30,8 @@ export class WatchlistComponent {
 
     this.savedMovie = this.getSavedItems('savedMovies');
   }
+
+  redirectMovie(id: number){
+    this.router.navigate(['/pages/Movie/', id]);
+  }
 }

@@ -1,12 +1,11 @@
 <main class="container__main">
-  <!-- <button (click)="redirectMyList()" class="button__list"> <i class="pi pi-bookmark" style="font-size: 1rem;"></i> My list</button> -->
 
   <div class="container__search">
     <input
       type="text"
       [value]="searchQuery"
       (input)="onSearchInputChange($event)"
-      placeholder="Buscar series..."
+      placeholder="Search movies..."
     />
 
     <div class="filter" *ngIf="filteredMovie">

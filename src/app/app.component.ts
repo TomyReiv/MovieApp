@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { MovieService } from './services/movie.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'MoviesApp';
 
+  private themeService = inject(MovieService);
+
+  getIsDarkMode(): boolean {
+    return this.themeService.getIsDarkMode();
+  }
  
 }

@@ -55,7 +55,6 @@ h4 {
   flex-direction: row;
   justify-content: center;
   width: 80%;
-  /* margin: auto; */
 }
 
 .container__orderBy{
@@ -72,6 +71,9 @@ h4 {
   margin-left: 1rem; 
 }
 
+.container__orderBy option{
+  margin-top: 1rem;
+}
 
 .container__button{
   display: flex;
@@ -167,6 +169,7 @@ h4 {
   }
   .card{
     margin-left: 0%;
+    margin: auto;
   }
 
   img {
@@ -178,5 +181,3 @@ h4 {
   }
 }
 
-@media (min-width: 1025px) {
-}
